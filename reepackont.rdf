@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12/"
-     xml:base="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12/"
+<rdf:RDF xmlns="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"
+     xml:base="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:bfo="http://purl.obolibrary.org/obo/"
      xmlns:iof="https://spec.industrialontologies.org/ontology/core/Metadatacore/coreModule"
@@ -14,11 +14,12 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:iof-core="https://spec.industrialontologies.org/ontology/core/Core/"
      xmlns:iof-scro="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12"/>
-    
+
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"/>
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -26,58 +27,58 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.w3.org/2004/02/skos/core#example -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/adaptedFrom -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/adaptedFrom"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/counterExample -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/counterExample"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/explanatoryNote -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/explanatoryNote"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageDefinition -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageDefinition"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/synonym -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/synonym"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -85,28 +86,28 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000196 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000196"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/designatedBy -->
 
     <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/designatedBy"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/hasRole -->
 
     <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -114,19 +115,19 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030"/>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-    
+
 
 
     <!-- http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#FoldingBox -->
@@ -134,25 +135,25 @@
     <owl:Class rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#FoldingBox">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/PieceOfEquipment"/>
     </owl:Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#MaterialProduct -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#MaterialProduct"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/DesignedFunction -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/DesignedFunction"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/EquipmentRole -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/EquipmentRole"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialArtifact -->
@@ -177,7 +178,7 @@
         <iof-av:naturalLanguageDefinition xml:lang="en-us">object that is deliberately created to have a certain function</iof-av:naturalLanguageDefinition>
         <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material artifact&apos; is defined as exactly an instance of &apos;object&apos; that is the &apos;bearer of&apos; some &apos;designed function&apos;</iof-av:semiFormalNaturalLanguageDefinition>
     </owl:Class>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialComponent -->
@@ -208,13 +209,13 @@
         <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material component&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;material component role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
         <iof-av:synonym xml:lang="en-us">part</iof-av:synonym>
     </owl:Class>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialComponentRole -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialComponentRole"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialProduct -->
@@ -246,13 +247,13 @@ Services as products as well as software products will be considered in the next
         <iof-av:naturalLanguageDefinition xml:lang="en-us">material entity which has the material product role</iof-av:naturalLanguageDefinition>
         <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material product&apos; is defined as exactly an instance of &apos;material entity&apos; that is the &apos;has role&apos; some &apos;material product role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
     </owl:Class>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialProductRole -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialProductRole"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/PieceOfEquipment -->
@@ -278,7 +279,7 @@ Services as products as well as software products will be considered in the next
         <iof-av:naturalLanguageDefinition xml:lang="en-us">material artifact which has an equipment role</iof-av:naturalLanguageDefinition>
         <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;piece of equipment&apos; is defined as exactly an instance of &apos;material artifact&apos; that &apos;has role&apos; some &apos;equipment role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
     </owl:Class>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/RawMaterial -->
@@ -304,13 +305,13 @@ Services as products as well as software products will be considered in the next
         <iof-av:naturalLanguageDefinition xml:lang="en-us">material entity which has the raw material role</iof-av:naturalLanguageDefinition>
         <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;raw material&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;raw material role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
     </owl:Class>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/RawMaterialRole -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/RawMaterialRole"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/Lot -->
@@ -339,13 +340,13 @@ Services as products as well as software products will be considered in the next
         <iof-av:naturalLanguageDefinition xml:lang="en-us">quantity of material entities produced together and sharing the same production history and specifications</iof-av:naturalLanguageDefinition>
         <iof-av:semiFormalNaturalLanguageDefinition>every instannce of &apos;lot&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;lot role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
     </owl:Class>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotNumber -->
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotNumber"/>
-    
+
 
 
     <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotRole -->
