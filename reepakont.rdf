@@ -1,34 +1,112 @@
 <?xml version="1.0"?>
-<!DOCTYPE rdf:RDF [
-	<!ENTITY bfo "http://purl.obolibrary.org/obo/">
-	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
-	<!ENTITY dcterms "http://purl.org/dc/terms/">
-	<!ENTITY iof-av "https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/">
-	<!ENTITY iof-core "https://spec.industrialontologies.org/ontology/core/Core/">
-	<!ENTITY iof-scro "https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/">
-	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
-	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-	<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
-	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-]>
 <rdf:RDF xmlns="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12/"
      xml:base="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:bfo="http://purl.obolibrary.org/obo/"
      xmlns:iof="https://spec.industrialontologies.org/ontology/core/Metadatacore/coreModule"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	   xmlns:iof-av="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:iof-av="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:iof-core="https://spec.industrialontologies.org/ontology/core/Core/"
-     xmlns:iof-scro="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/"
-	   xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:iof-scro="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12"/>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <!--
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/adaptedFrom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/adaptedFrom"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/counterExample -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/counterExample"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/explanatoryNote -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/explanatoryNote"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageDefinition -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageDefinition"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/synonym -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/synonym"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000196 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000196"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/designatedBy -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/designatedBy"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/hasRole -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+    
+
+
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -36,160 +114,243 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-	<owl:Class rdf:about="&iof-core;MaterialProduct">
-		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000040"/>
-		<rdfs:label xml:lang="en-US">material product</rdfs:label>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&bfo;BFO_0000040">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&iof-core;hasRole"/>
-						<owl:someValuesFrom rdf:resource="&iof-core;MaterialProductRole"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<skos:example xml:lang="en-US">1. Natural resources: the seashells lying on the beach that some person collects, packages and sells; the iron ore in a mountain the rights to which some mining company has just purchased which they intend to mine and sell to iron-making processors;
+    
 
-2. Any manufactured good when it is offered for sale, supplied or being bought</skos:example>
-		<iof-av:counterExample>certified pre-owned warranty plan; software as a service (SaaS); training course; consultancy services;
-Office 365</iof-av:counterExample>
-		<iof-av:explanatoryNote>1. The definition does exclude services sold as product which deviates from some standard definitions and economic theory.
-Services as products as well as software products will be considered in the next version of the IOF Core
 
-2. See expanded definition under the corresponding role class. The term is formalized here as a defined class by referring to its corresponding role class and exists primarily for ontological modeling and implementation convenience.</iof-av:explanatoryNote>
-		<iof-av:firstOrderLogicDefinition>MaterialProduct(x) ↔ MaterialEntity(x) ∧ ∃r(MaterialProductRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
-		<iof-av:naturalLanguageDefinition xml:lang="en-US">material entity which has the material product role</iof-av:naturalLanguageDefinition>
-		<iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material product&apos; is defined as exactly an instance of &apos;material entity&apos; that is the &apos;has role&apos; some &apos;material product role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
-	</owl:Class>
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
 
-	<owl:Class rdf:about="&iof-core;MaterialArtifact">
-		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000030"/>
-		<rdfs:label xml:lang="en-US">material artifact</rdfs:label>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&bfo;BFO_0000030">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&bfo;BFO_0000196"/>
-						<owl:someValuesFrom rdf:resource="&iof-core;DesignedFunction"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<skos:example xml:lang="en-US">a machine, a screwdriver, a screw, a sheet of paper</skos:example>
-		<iof-av:adaptedFrom>http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ArtifactOntology</iof-av:adaptedFrom>
-		<iof-av:firstOrderLogicDefinition>MaterialArtifact(x) ↔ Object(x) ∧ ∃f(DesignedFunction(f) ∧ bearerOf(x,f))</iof-av:firstOrderLogicDefinition>
-		<iof-av:naturalLanguageDefinition xml:lang="en-US">object that is deliberately created to have a certain function</iof-av:naturalLanguageDefinition>
-		<iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material artifact&apos; is defined as exactly an instance of &apos;object&apos; that is the &apos;bearer of&apos; some &apos;designed function&apos;</iof-av:semiFormalNaturalLanguageDefinition>
-	</owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    
 
-	<owl:Class rdf:about="&iof-core;MaterialComponent">
-		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000040"/>
-		<rdfs:label xml:lang="en-US">material component</rdfs:label>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&bfo;BFO_0000040">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&iof-core;hasRole"/>
-						<owl:someValuesFrom rdf:resource="&iof-core;MaterialComponentRole"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<skos:example xml:lang="en-US">portion of water; portion of crude oil; sea shells; bolt; transmission assembly;engine in an airplane</skos:example>
-		<iof-av:counterExample>Braking subsystem -- systems and subsystems are object aggregates and often have fiat boundaries, in which case they may be incorrectly inferred as product components. Othertimes, they are systems with bonafide boundaries and should be inferred as a product component.</iof-av:counterExample>
-		<iof-av:explanatoryNote>1. Assemblies that are components for one manufacturer may be final products for another (e.g., the selling of diesel engines is a primary product line of Cummins diesel engine yet a component assembly for its customers, Freightliner Trucks). In other words, the context in which a material entity is used must be considered to determine whether it bears the component role.
 
-2. In most manufacturing use cases, material components will be a subclass of &apos;material artifact&apos;.
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
-3. See the expanded definition under the corresponding role class. The term is formalized here as a defined class by referring to its corresponding role class and exists primarily for ontological modeling and implementation convenience.</iof-av:explanatoryNote>
-		<iof-av:firstOrderLogicDefinition>MaterialComponent(x) ↔ MaterialEntity(x) ∧ ∃r(MaterialComponentRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
-		<iof-av:naturalLanguageDefinition xml:lang="en-US">material entity which has the material component role</iof-av:naturalLanguageDefinition>
-		<iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material component&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;material component role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
-		<iof-av:synonym xml:lang="en-US">part</iof-av:synonym>
-	</owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    
 
-	<owl:Class rdf:about="&iof-core;PieceOfEquipment">
-		<rdfs:subClassOf rdf:resource="&iof-core;MaterialArtifact"/>
-		<rdfs:label xml:lang="en-US">piece of equipment</rdfs:label>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&iof-core;MaterialArtifact">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&iof-core;hasRole"/>
-						<owl:someValuesFrom rdf:resource="&iof-core;EquipmentRole"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<skos:example xml:lang="en-US">wrench when it is used in the maintenance process of a car; chromatography column that is planned to be used in a protein purification process; r truck that is used to transport goods to the buyer; single-use bioreactor when it is planned to be used in the upstream phase of a biomanufacturing process</skos:example>
-		<iof-av:counterExample>buffer designed to keep pH in a bioreactor constant</iof-av:counterExample>
-		<iof-av:explanatoryNote>See the expanded definition under the corresponding role class. The term is formalized here as a defined class by referring to its corresponding role class and exists primarily for ontological modeling and implementation convenience. Therefore, specific kinds of equipment such as machines, devices, and tools should be asserted under &apos;material artifact&apos; and not directly under &apos;piece of equipment&apos;.</iof-av:explanatoryNote>
-		<iof-av:firstOrderLogicDefinition>PieceOfEquipment(x) ↔ MaterialArtifact(x) ∧ ∃r(EquipmentRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
-		<iof-av:naturalLanguageDefinition xml:lang="en-US">material artifact which has an equipment role</iof-av:naturalLanguageDefinition>
-		<iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;piece of equipment&apos; is defined as exactly an instance of &apos;material artifact&apos; that &apos;has role&apos; some &apos;equipment role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
-	</owl:Class>
 
-	<owl:Class rdf:about="&iof-scro;Lot">
-		<rdfs:label xml:lang="en-US">lot</rdfs:label>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&bfo;BFO_0000040">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&iof-core;designatedBy"/>
-						<owl:someValuesFrom rdf:resource="&iof-scro;LotNumber"/>
-					</owl:Restriction>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&iof-core;hasRole"/>
-						<owl:someValuesFrom rdf:resource="&iof-scro;LotRole"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<skos:example>a batch of waterpump housings manufactured during the morning shift of diecasting plant on a certian machine</skos:example>
-		<iof-av:adaptedFrom>APICS</iof-av:adaptedFrom>
-		<iof-av:explanatoryNote>A Lot can consist of portion of bulk material</iof-av:explanatoryNote>
-		<iof-av:firstOrderLogicDefinition>Lot(x) ↔ MaterialEntity(x) ∧ ∃r(LotRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
-		<iof-av:naturalLanguageDefinition xml:lang="en-US">quantity of material entities produced together and sharing the same production history and specifications</iof-av:naturalLanguageDefinition>
-		<iof-av:semiFormalNaturalLanguageDefinition>every instannce of &apos;lot&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;lot role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
-	</owl:Class>
+    <!-- http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#FoldingBox -->
 
-	<owl:Class rdf:about="&iof-core;RawMaterial">
-		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000040"/>
-		<rdfs:label xml:lang="en-US">raw material</rdfs:label>
-		<owl:equivalentClass>
-			<owl:Class>
-				<owl:intersectionOf rdf:parseType="Collection">
-					<rdf:Description rdf:about="&bfo;BFO_0000040">
-					</rdf:Description>
-					<owl:Restriction>
-						<owl:onProperty rdf:resource="&iof-core;hasRole"/>
-						<owl:someValuesFrom rdf:resource="&iof-core;RawMaterialRole"/>
-					</owl:Restriction>
-				</owl:intersectionOf>
-			</owl:Class>
-		</owl:equivalentClass>
-		<skos:example xml:lang="en-US">rolls of aluminum a manufacturer purchases to be consumed on its bottling lines to produce aluminum cans to package its product, crude oil that is converted into gasoline in a refining process; wheels an automobile manufacturer purchases to assemble into a car</skos:example>
-		<iof-av:counterExample>oil used to power the refining process</iof-av:counterExample>
-		<iof-av:explanatoryNote>This class is very general and it is intended to be used for grouping inputs to the product production process external to the bussiness organization. But, things like material artifacts should not be asserted as subclasses of this class</iof-av:explanatoryNote>
-		<iof-av:firstOrderLogicDefinition>RawMaterial(x) ↔ MaterialEntity(x) ∧ ∃r(RawMaterialRole(x) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
-		<iof-av:naturalLanguageDefinition xml:lang="en-US">material entity which has the raw material role</iof-av:naturalLanguageDefinition>
-		<iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;raw material&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;raw material role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
-	</owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#FoldingBox">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/PieceOfEquipment"/>
+    </owl:Class>
+    
+
 
     <!-- http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#MaterialProduct -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#MaterialProduct"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/DesignedFunction -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/DesignedFunction"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/EquipmentRole -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/EquipmentRole"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialArtifact -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialArtifact">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000030"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/DesignedFunction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:label xml:lang="en-us">material artifact</rdfs:label>
+        <skos:example xml:lang="en-us">a machine, a screwdriver, a screw, a sheet of paper</skos:example>
+        <iof-av:adaptedFrom>http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ArtifactOntology</iof-av:adaptedFrom>
+        <iof-av:firstOrderLogicDefinition>MaterialArtifact(x) ↔ Object(x) ∧ ∃f(DesignedFunction(f) ∧ bearerOf(x,f))</iof-av:firstOrderLogicDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">object that is deliberately created to have a certain function</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material artifact&apos; is defined as exactly an instance of &apos;object&apos; that is the &apos;bearer of&apos; some &apos;designed function&apos;</iof-av:semiFormalNaturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialComponent -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/MaterialComponentRole"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en-us">material component</rdfs:label>
+        <skos:example xml:lang="en-us">portion of water; portion of crude oil; sea shells; bolt; transmission assembly;engine in an airplane</skos:example>
+        <iof-av:counterExample>Braking subsystem -- systems and subsystems are object aggregates and often have fiat boundaries, in which case they may be incorrectly inferred as product components. Othertimes, they are systems with bonafide boundaries and should be inferred as a product component.</iof-av:counterExample>
+        <iof-av:explanatoryNote>1. Assemblies that are components for one manufacturer may be final products for another (e.g., the selling of diesel engines is a primary product line of Cummins diesel engine yet a component assembly for its customers, Freightliner Trucks). In other words, the context in which a material entity is used must be considered to determine whether it bears the component role.
+
+2. In most manufacturing use cases, material components will be a subclass of &apos;material artifact&apos;.
+
+3. See the expanded definition under the corresponding role class. The term is formalized here as a defined class by referring to its corresponding role class and exists primarily for ontological modeling and implementation convenience.</iof-av:explanatoryNote>
+        <iof-av:firstOrderLogicDefinition>MaterialComponent(x) ↔ MaterialEntity(x) ∧ ∃r(MaterialComponentRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">material entity which has the material component role</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material component&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;material component role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
+        <iof-av:synonym xml:lang="en-us">part</iof-av:synonym>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialComponentRole -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialComponentRole"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialProduct -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialProduct">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/MaterialProductRole"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en-us">material product</rdfs:label>
+        <skos:example xml:lang="en-us">1. Natural resources: the seashells lying on the beach that some person collects, packages and sells; the iron ore in a mountain the rights to which some mining company has just purchased which they intend to mine and sell to iron-making processors;
+
+2. Any manufactured good when it is offered for sale, supplied or being bought</skos:example>
+        <iof-av:counterExample>certified pre-owned warranty plan; software as a service (SaaS); training course; consultancy services;
+Office 365</iof-av:counterExample>
+        <iof-av:explanatoryNote>1. The definition does exclude services sold as product which deviates from some standard definitions and economic theory.
+Services as products as well as software products will be considered in the next version of the IOF Core
+
+2. See expanded definition under the corresponding role class. The term is formalized here as a defined class by referring to its corresponding role class and exists primarily for ontological modeling and implementation convenience.</iof-av:explanatoryNote>
+        <iof-av:firstOrderLogicDefinition>MaterialProduct(x) ↔ MaterialEntity(x) ∧ ∃r(MaterialProductRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">material entity which has the material product role</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;material product&apos; is defined as exactly an instance of &apos;material entity&apos; that is the &apos;has role&apos; some &apos;material product role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/MaterialProductRole -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialProductRole"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/PieceOfEquipment -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/PieceOfEquipment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://spec.industrialontologies.org/ontology/core/Core/MaterialArtifact"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/EquipmentRole"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/MaterialArtifact"/>
+        <rdfs:label xml:lang="en-us">piece of equipment</rdfs:label>
+        <skos:example xml:lang="en-us">wrench when it is used in the maintenance process of a car; chromatography column that is planned to be used in a protein purification process; r truck that is used to transport goods to the buyer; single-use bioreactor when it is planned to be used in the upstream phase of a biomanufacturing process</skos:example>
+        <iof-av:counterExample>buffer designed to keep pH in a bioreactor constant</iof-av:counterExample>
+        <iof-av:explanatoryNote>See the expanded definition under the corresponding role class. The term is formalized here as a defined class by referring to its corresponding role class and exists primarily for ontological modeling and implementation convenience. Therefore, specific kinds of equipment such as machines, devices, and tools should be asserted under &apos;material artifact&apos; and not directly under &apos;piece of equipment&apos;.</iof-av:explanatoryNote>
+        <iof-av:firstOrderLogicDefinition>PieceOfEquipment(x) ↔ MaterialArtifact(x) ∧ ∃r(EquipmentRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">material artifact which has an equipment role</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;piece of equipment&apos; is defined as exactly an instance of &apos;material artifact&apos; that &apos;has role&apos; some &apos;equipment role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/RawMaterial -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/RawMaterial">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/RawMaterialRole"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en-us">raw material</rdfs:label>
+        <skos:example xml:lang="en-us">rolls of aluminum a manufacturer purchases to be consumed on its bottling lines to produce aluminum cans to package its product, crude oil that is converted into gasoline in a refining process; wheels an automobile manufacturer purchases to assemble into a car</skos:example>
+        <iof-av:counterExample>oil used to power the refining process</iof-av:counterExample>
+        <iof-av:explanatoryNote>This class is very general and it is intended to be used for grouping inputs to the product production process external to the bussiness organization. But, things like material artifacts should not be asserted as subclasses of this class</iof-av:explanatoryNote>
+        <iof-av:firstOrderLogicDefinition>RawMaterial(x) ↔ MaterialEntity(x) ∧ ∃r(RawMaterialRole(x) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">material entity which has the raw material role</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageDefinition>every instance of &apos;raw material&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;raw material role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/RawMaterialRole -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/core/Core/RawMaterialRole"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/Lot -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/Lot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/designatedBy"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotNumber"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+                        <owl:someValuesFrom rdf:resource="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotRole"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en-us">lot</rdfs:label>
+        <skos:example>a batch of waterpump housings manufactured during the morning shift of diecasting plant on a certian machine</skos:example>
+        <iof-av:adaptedFrom>APICS</iof-av:adaptedFrom>
+        <iof-av:explanatoryNote>A Lot can consist of portion of bulk material</iof-av:explanatoryNote>
+        <iof-av:firstOrderLogicDefinition>Lot(x) ↔ MaterialEntity(x) ∧ ∃r(LotRole(r) ∧ hasRole(x,r))</iof-av:firstOrderLogicDefinition>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">quantity of material entities produced together and sharing the same production history and specifications</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageDefinition>every instannce of &apos;lot&apos; is defined as exactly an instance of &apos;material entity&apos; that &apos;has role&apos; some &apos;lot role&apos;</iof-av:semiFormalNaturalLanguageDefinition>
+    </owl:Class>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotNumber -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotNumber"/>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotRole -->
+
+    <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotRole"/>
 </rdf:RDF>
 
 
