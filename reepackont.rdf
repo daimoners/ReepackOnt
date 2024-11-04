@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"
+<rdf:RDF xmlns="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#"
      xml:base="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:bfo="http://purl.obolibrary.org/obo/"
@@ -11,10 +11,11 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:iof-av="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/"
+     xmlns:schema="http://schema.org/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:iof-core="https://spec.industrialontologies.org/ontology/core/Core/"
-     xmlns:iof-scro="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/">
-
+     xmlns:iof-scro="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/"
+     xmlns:reepackont="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"/>
 
 
@@ -54,6 +55,12 @@
 
 
 
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicAxiom"/>
+
+
+
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition"/>
@@ -63,6 +70,12 @@
     <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition -->
 
     <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition"/>
+
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageAxiom -->
+
+    <owl:AnnotationProperty rdf:about="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageAxiom"/>
 
 
 
@@ -87,11 +100,69 @@
      -->
 
 
+    <!-- http://www.w3.org/ns/sosa/detects -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/detects">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/isDetectedBy"/>
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/ns/sosa/Stimulus"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/obs/"/>
+        <rdfs:label xml:lang="en">detects</rdfs:label>
+        <skos:definition xml:lang="en">
+  A relation from a Sensor to the Stimulus that the Sensor detects.
+  The Stimulus itself will be serving as a proxy for some Property.
+  </skos:definition>
+    </owl:ObjectProperty>
+
+    <!-- http://www.w3.org/ns/sosa/isDetectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isDetectedBy">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Stimulus"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/obs/"/>
+        <rdfs:label xml:lang="en">is detected by</rdfs:label>
+        <skos:definition xml:lang="en">
+  A relation from a Stimulus to the Sensor that may detect it.
+  The Stimulus itself will be serving as a proxy for some Property.
+  </skos:definition>
+    </owl:ObjectProperty>
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000196 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000196"/>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-type -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-type">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#made-of -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#made-of">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
 
 
 
@@ -103,7 +174,115 @@
 
     <!-- https://spec.industrialontologies.org/ontology/core/Core/hasRole -->
 
-    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/hasRole"/>
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000196"/>
+        <owl:inverseOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/roleOf"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:label xml:lang="en-us">has role</rdfs:label>
+        <skos:example xml:lang="en-us">this person has role this investigator role (more colloquially: this person has this role of investigator)</skos:example>
+        <iof-av:adaptedFrom>http://purl.obolibrary.org/obo/RO_0000087</iof-av:adaptedFrom>
+        <iof-av:explanatoryNote xml:lang="en-us">A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists.</iof-av:explanatoryNote>
+        <iof-av:firstOrderLogicAxiom>hasRole(x,y) → IndependentContinuant(x) ∧ Role(y) ∧ bearerOf(x,y)</iof-av:firstOrderLogicAxiom>
+        <iof-av:naturalLanguageDefinition xml:lang="en-us">relation from an independent continuant (the bearer) to a role, in which the role specifically depends on the bearer for its existence</iof-av:naturalLanguageDefinition>
+        <iof-av:semiFormalNaturalLanguageAxiom>x has role y holds when x is a &apos;independent continuant&apos; and y is a &apos;role&apos; and x is &apos;bearer of&apos; y</iof-av:semiFormalNaturalLanguageAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://spec.industrialontologies.org/ontology/core/Core/roleOf -->
+
+    <owl:ObjectProperty rdf:about="https://spec.industrialontologies.org/ontology/core/Core/roleOf"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A-dimension -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A-dimension">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B-dimension -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B-dimension">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D-dimension -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D-dimension">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E-tunnel -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E-tunnel">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F-dimension -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F-dimension">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha-angle -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha-angle">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta-angle -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta-angle">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-thickness -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-thickness">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-width -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-width">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
 
 
 
@@ -115,6 +294,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
+
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
 
 
 
@@ -130,17 +321,41 @@
 
 
 
-    <!-- http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#FoldingBox -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#FoldingBox">
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/RawMaterial"/>
+    </owl:Class>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/MaterialProduct"/>
+    </owl:Class>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox">
         <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/PieceOfEquipment"/>
     </owl:Class>
 
 
 
-    <!-- http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#MaterialProduct -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialProduct -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/olep/ontologies/2024/9/untitled-ontology-12#MaterialProduct"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialProduct"/>
+
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP">
+        <rdfs:subClassOf rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/RawMaterial"/>
+    </owl:Class>
 
 
 
@@ -347,6 +562,34 @@ Services as products as well as software products will be considered in the next
 
     <owl:Class rdf:about="https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotNumber"/>
 
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/obs/"/>
+        <rdfs:label xml:lang="en">Sensor or Observer</rdfs:label>
+        <skos:altLabel xml:lang="en">Observer</skos:altLabel>
+        <skos:definition xml:lang="en">
+  An identifiable entity that can generate Observations pertaining to a Property by implementing a (Observation) Procedure. Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</skos:definition>
+        <skos:example xml:lang="en">Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes.</skos:example>
+        <skos:example xml:lang="en">Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smartphone (which acts as Host or Platform). Other examples of Sensors include the human eyes.</skos:example>
+        <skos:note xml:lang="en">A Sensor can be hosted by one or more Platform.</skos:note>
+        <skos:note xml:lang="en">Different Sensors can follow the same (reusable) observing Procedure for the creation of different Observations.</skos:note>
+        <skos:note xml:lang="en">The Sensor is an instance of a sensor, instrument, implementation of an algorithm, or a being such as a person.</skos:note>
+        <skos:note>The UML class &apos;Observer&apos; from ISO 19156:2023 is implemented in SOSA by the OWL/RDFS class &apos;Sensor&apos;. The class name &apos;Sensor&apos; is preferred for backward compatibility with existing SOSA deployments. </skos:note>
+        <skos:prefLabel xml:lang="en">Sensor</skos:prefLabel>
+        <skos:scopeNote xml:lang="en">The Sensor is the entity instance, not the entity type. Pertaining to sensors, the Sensor would reference the explicit sensor, while the Procedure would reference the methodology utilized by that sensor type;</skos:scopeNote>
+    </owl:Class>
+
+    <!-- http://www.w3.org/ns/sosa/Stimulus -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Stimulus">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/obs/"/>
+        <rdfs:label xml:lang="en">Stimulus</rdfs:label>
+        <skos:definition xml:lang="en">
+  An event in the real world that &apos;triggers&apos; the Sensor. The properties associated to the Stimulus may be different to the eventual observed Property. It is the event, not the object, that triggers the Sensor.
+  </skos:definition>
+    </owl:Class>
 
 
     <!-- https://spec.industrialontologies.org/ontology/supplychain/SupplyChain/LotRole -->
