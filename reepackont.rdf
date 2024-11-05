@@ -5,13 +5,30 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf"/>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <!--
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -19,7 +36,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#detects -->
@@ -33,19 +50,7 @@
   The Stimulus itself will be serving as a proxy for some Property.
   </skos:definition>
     </owl:ObjectProperty>
-
-
-
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor"/>
-        <skos:definition xml:lang="en">
-  A relation from a Stimulus to the Sensor that may detect it.
-  The Stimulus itself will be serving as a proxy for some Property.
-  </skos:definition>
-    </owl:ObjectProperty>
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-type -->
@@ -64,8 +69,23 @@
   A relation from a Film to the Compostable or MonoPP that states which RawMaterial has been used to create the Film.
   </skos:definition>
     </owl:ObjectProperty>
+    
 
-    <!--
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor"/>
+        <skos:definition xml:lang="en">
+  A relation from a Stimulus to the Sensor that may detect it.
+  The Stimulus itself will be serving as a proxy for some Property.
+  </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -73,7 +93,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A-dimension -->
@@ -82,6 +102,8 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
+    
+
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B-dimension -->
 
@@ -89,7 +111,7 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D-dimension -->
@@ -98,7 +120,7 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E-tunnel -->
@@ -107,15 +129,16 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F-dimension -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F-dimension">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha-angle -->
@@ -124,7 +147,7 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta-angle -->
@@ -133,15 +156,16 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-thickness -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-thickness">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-width -->
@@ -150,9 +174,10 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
     </owl:DatatypeProperty>
+    
 
 
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -160,7 +185,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable -->
@@ -168,7 +193,7 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
     </owl:Class>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film -->
@@ -176,7 +201,7 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialProduct"/>
     </owl:Class>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox -->
@@ -184,31 +209,31 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PieceOfEquipment"/>
     </owl:Class>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Lot -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Lot"/>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialArtifact -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialArtifact"/>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialComponent -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialComponent"/>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialProduct -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialProduct"/>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP -->
@@ -216,7 +241,7 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
     </owl:Class>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PieceOfEquipment -->
@@ -224,19 +249,19 @@
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PieceOfEquipment">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MaterialArtifact"/>
     </owl:Class>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor"/>
-
+    
 
 
     <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus -->
