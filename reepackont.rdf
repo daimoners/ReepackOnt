@@ -39,16 +39,31 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#detects -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#belongs-to -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#detects">
-        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus"/>
-        <skos:definition xml:lang="en">
-  A relation from a Sensor to the Stimulus that the Sensor detects.
-  The Stimulus itself will be serving as a proxy for some Property.
-  </skos:definition>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#belongs-to">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#edge-belongs-to -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#edge-belongs-to">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#belongs-to"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Edge"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#edge-has-vertex -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#edge-has-vertex">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertex"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Edge"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
     </owl:ObjectProperty>
     
 
@@ -60,8 +75,9 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable"/>
-                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#OPET"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PET"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PPL"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -72,15 +88,145 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-edges -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-detected-by">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-edges">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Edge"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-input -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-input">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Simulation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalArtifact"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-output -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-output">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Simulation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalArtifact"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-tetrahedrons -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-tetrahedrons">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Tetrahedron"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-triangles -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-triangles">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Triangle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertex -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertex">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertices -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertices">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-measured-by -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#is-measured-by">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measure"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackSensor"/>
         <skos:definition xml:lang="en">
-  A relation from a Stimulus to the Sensor that may detect it.
-  The Stimulus itself will be serving as a proxy for some Property.
+  A relation from a Measurement to the Sensor that may measure it.
   </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measure -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measure">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackSensor"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+        <skos:definition xml:lang="en">
+  A relation from a Sensor to the Measurement performed by the Sensor itself.
+  </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#relative-to-film -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#relative-to-film">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#tetrahedron-belongs-to -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#tetrahedron-belongs-to">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#belongs-to"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Tetrahedron"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#tetrahedron-has-vertex -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#tetrahedron-has-vertex">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertex"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Tetrahedron"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#triangle-belongs-to -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#triangle-belongs-to">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#belongs-to"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Triangle"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#triangle-has-vertex -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#triangle-has-vertex">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#has-vertex"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Triangle"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
     </owl:ObjectProperty>
     
 
@@ -96,83 +242,184 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A-dimension -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A_dimension -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A-dimension">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#A_dimension">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B-dimension -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B_dimension -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B-dimension">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#B_dimension">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D-dimension -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D_dimension -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D-dimension">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#D_dimension">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E-tunnel -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E_tunnel -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E-tunnel">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#E_tunnel">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F-dimension -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F_dimension -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F-dimension">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#F_dimension">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha-angle -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#X -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha-angle">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#X">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta-angle -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Y -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta-angle">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Y">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-thickness -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Z -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-thickness">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Z">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha_angle -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#alpha_angle">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta_angle -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#beta_angle">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#FoldingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film_thickness -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film_thickness">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-width -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film_width -->
 
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film-width">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#film_width">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Film"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measurement_datatype -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measurement_datatype">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measurement_value -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#measurement_value">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#number-of-vertices -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#number-of-vertices">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#original-software -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#original-software">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#realm_of_measurement -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#realm_of_measurement">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MeasuredStrain"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Measurement"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#sensor_name -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#sensor_name">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackSensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#status_code -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#status_code">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -188,10 +435,22 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalArtifact -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Compostable">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalArtifact"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Edge -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Edge">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
     </owl:Class>
     
 
@@ -236,9 +495,48 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MeasuredStrain -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MonoPP">
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#MeasuredStrain">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Measurement"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Measurement -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Measurement"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Mesh">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#OPET -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#OPET">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PET -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PET">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PPL -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PPL">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#RawMaterial"/>
     </owl:Class>
     
@@ -258,15 +556,66 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Sensor"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackMeasurement">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Measurement"/>
+    </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus -->
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackSensor -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Stimulus"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#ReepackSensor"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Simulation -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Simulation"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Tetrahedron -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Tetrahedron">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Triangle -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Triangle">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#Vertex">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#DigitalComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#OPET"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PET"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/daimoners/ReepackOnt/main/reepackont.rdf#PPL"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
